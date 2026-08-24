@@ -1,0 +1,44 @@
+/* Enlace del nombre del Partner */
+.mba-partner-link {
+    cursor: pointer;
+    font-weight: 500;
+    color: #7C5BBA !important;
+    text-decoration: none;
+}
+.mba-partner-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo base de los botones de drilldown */
+.mba-drilldown-btn {
+    display: inline-block;
+    font-size: 9px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: normal;
+    vertical-align: middle;
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #495057;
+    
+    /* Oculto por defecto con transición de desvanecimiento */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease-in-out, visibility 0.15s, background-color 0.15s;
+    text-decoration: none !important;
+}
+
+/* Mostrar botones solo cuando el mouse está sobre la celda del nombre del partner */
+.act_as_cell.left:hover .mba-drilldown-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto hover sobre el botón mismo */
+.mba-drilldown-btn:hover {
+    background-color: #e9ecef;
+    border-color: #ced4da;
+    color: #212529;
+}
