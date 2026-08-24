@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_aged_partner_balance_lines_inherit" inherit_id="account_financial_report.report_aged_partner_balance_lines">
+        <xpath expr="//div[hasclass('act_as_cell') and hasclass('left')]/span[@t-esc=&quot;partner['name']&quot;]" position="replace">
+            <t t-if="partner.get('id')">
+                <!-- Enlace al Formulario del Cliente/Proveedor -->
+                <span t-att-res-id="partner['id']" 
+                      res-model="res.partner" 
+                      view-type="form" 
+                      style="cursor: pointer; font-weight: bold; color: #7C5BBA;">
+                    <t t-esc="partner['name']" />
+                </span>
+                
+                <!-- Botón para ver sus Facturas -->
+                <span t-att-domain="[('partner_id', '=', partner['id']), ('move_type', 'in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund'))]" 
+                      res-model="account.move" 
+                      style="margin-left: 8px; cursor: pointer; font-size: 10px; color: #00A09D; border: 1px solid #00A09D; padding: 1px 4px; border-radius: 3px; font-weight: normal; vertical-align: middle;">
+                    Facturas
+                </span>
+
+                <!-- Botón para ver sus Apuntes Contables (Journal Items) -->
+                <span t-att-domain="[('partner_id', '=', partner['id']), ('account_id.account_type', 'in', ('asset_receivable', 'liability_payable'))]" 
+                      res-model="account.move.line" 
+                      style="margin-left: 5px; cursor: pointer; font-size: 10px; color: #243746; border: 1px solid #243746; padding: 1px 4px; border-radius: 3px; font-weight: normal; vertical-align: middle;">
+                    Apuntes contables
+                </span>
+            </t>
+            <t t-else="">
+                <span t-esc="partner['name']" />
+            </t>
+        </xpath>
+    </template>
+</odoo>
