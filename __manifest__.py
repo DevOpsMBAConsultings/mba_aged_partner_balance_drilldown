@@ -1,6 +1,6 @@
 {
     "name": "Aged Partner Balance Drilldown (MBA Consultings)",
-    "version": "18.0.1.0.2",
+    "version": "18.0.1.0.3",
     "category": "Accounting",
     "summary": "Adds click/drill-down links to Aged Partner Balance report | MBA Consultings",
     "author": "MBA Consultings, Brooks Gonzalez",

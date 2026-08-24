@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Aplicar la fuente Inter a todo el reporte HTML para igualar la estética de Enterprise */
+.act_as_table, .o_account_financial_reports_page, .data_table, .list_table {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    letter-spacing: -0.015em !important;
+    -webkit-font-smoothing: antialiased;
+}
+
 /* Enlace del nombre del Partner */
 .mba-partner-link {
     cursor: pointer;
